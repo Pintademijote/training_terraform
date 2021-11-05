@@ -50,19 +50,18 @@ data "aws_ami" "amazon-linux-2" {
    }
  }
 
- resource "aws_eip" "name" {
+ resource "aws_eip" "pg_eip" {
    vpc = true
  }
 
  resource "aws_eip_association" "eip_pg" {
-   instance_id = aws_instance.pg_centos7_t2micro.id
-   allocation_id = aws_eip.truc.id
+   instance_id = aws_instance.pg_t2.id
+   allocation_id = aws_eip.pg_eip.id
 
  }
 
  resource "aws_security_group" "pg_sg" {
   name        = "pg_sg"
-  vpc_id      = aws_vpc.test.id
   dynamic "ingress" {
     for_each = toset(local.ports_in)
     content {
