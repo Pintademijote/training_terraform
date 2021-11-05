@@ -37,6 +37,7 @@ data "aws_ami" "amazon-linux-2" {
  resource "aws_instance" "pg_t2" {
    ami           = "${data.aws_ami.amazon-linux-2.id}"
    instance_type = "t2.micro"
+   key_name = "devops-pg"
 
    tags = {
        Name = "${var.prenom}"
