@@ -20,4 +20,8 @@ provider "aws" {
        Name = "pg"
        Formation = "ajc"
    }
+
+   root_block_device {
+       delete_on_termination = true
+   }
  }
