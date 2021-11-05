@@ -13,7 +13,7 @@ provider "aws" {
 }
 
  resource "aws_instance" "pg_centos7_t2micro" {
-   ami           = "ami-0083662ba17882949"
+   ami           = "ami-0057d8e6fb0692b80"
    instance_type = "t2.micro"
 
    tags = {
