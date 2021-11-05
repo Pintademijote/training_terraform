@@ -12,9 +12,6 @@ locals {
     443,
     80
   ]
-  ports_out = [
-    0
-  ]
 }
 
 # Configure the AWS Provider
@@ -74,15 +71,7 @@ data "aws_ami" "amazon-linux-2" {
     }
   }
 
-  dynamic "egress" {
-    for_each = toset(local.ports_out)
-    content {
-      from_port        = egress.value
-      to_port          = egress.value
-      protocol         = "-1"
-      cidr_blocks      = ["0.0.0.0/0"]
-    }
-  }
+
 }
 
 resource "aws_network_interface_sg_attachment" "sg_attachment" {
