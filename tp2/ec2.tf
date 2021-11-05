@@ -16,7 +16,7 @@ provider "aws" {
    ami           = "ami-0083662ba17882949"
    instance_type = "t2.micro"
 
-   tag = {
+   tags = {
        Name = "pg"
        Formation = "ajc"
    }
