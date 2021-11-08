@@ -38,7 +38,7 @@ data "aws_ami" "amazon-linux-2" {
    ami           = "${data.aws_ami.amazon-linux-2.id}"
    instance_type = "t2.micro"
    key_name = "devops-pg"
-   security_groups = [ aws_security_group.pg_sg ]
+   security_groups = [ aws_security_group.pg_sg.name ]
 
    tags = var.tag_ec2
 
