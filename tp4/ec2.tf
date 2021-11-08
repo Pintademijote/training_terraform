@@ -53,6 +53,10 @@ data "aws_ami" "amazon-linux-2" {
   
   }
 
+  provisioner "local-exec" {
+    command = "echo ${self.public_ip} >> infos_ec2.txt"
+  }
+
   connection {
     type="ssh"
     user="ec2"
