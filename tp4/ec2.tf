@@ -89,6 +89,7 @@ data "aws_ami" "amazon-linux-2" {
       protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0"]
     }
+  }
 
   egress {
       from_port        = 0
@@ -97,9 +98,6 @@ data "aws_ami" "amazon-linux-2" {
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
     }
-
-  }
-
 
 }
 
