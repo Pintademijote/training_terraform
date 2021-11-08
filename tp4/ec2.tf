@@ -58,6 +58,7 @@ data "aws_ami" "amazon-linux-2" {
     type="ssh"
     user="ec2"
     private_key=file("/home/vagrant/devops-pg.pem")
+    host=self.public_ip
   }
 
  }
