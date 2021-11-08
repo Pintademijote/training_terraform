@@ -39,10 +39,7 @@ data "aws_ami" "amazon-linux-2" {
    instance_type = "t2.micro"
    key_name = "devops-pg"
 
-   tags = {
-       Name = "${var.prenom}"
-       Formation = "ajc"
-   }
+   tags = var.tag_ec2
 
    root_block_device {
        delete_on_termination = true
