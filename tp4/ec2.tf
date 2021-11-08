@@ -48,7 +48,7 @@ data "aws_ami" "amazon-linux-2" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo yum install nginx"
+      "sudo yum -y install nginx"
     ]
   
   }
