@@ -9,6 +9,7 @@ terraform {
 
 locals {
   ports_in = [
+    22,
     443,
     80
   ]
@@ -54,7 +55,7 @@ data "aws_ami" "amazon-linux-2" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${self.public_ip} >> infos_ec2.txt"
+    command = "echo ${self.public_ip} > infos_ec2.txt"
   }
 
   connection {
