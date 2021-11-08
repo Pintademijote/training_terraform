@@ -48,8 +48,7 @@ data "aws_ami" "amazon-linux-2" {
 
   provisioner "remote-exec" {
     inline = [
-      "echo ${aws_instance.pg_t2.public_ip} > infos_ec2.txt" ,
-      "echo ${aws_instance.pg_t2.outpost_arn} >> infos_ec2.txt",
+      "sudo yum install nginx"
     ]
   
   }
