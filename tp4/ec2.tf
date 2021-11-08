@@ -49,7 +49,9 @@ data "aws_ami" "amazon-linux-2" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo amazon-linux-extras install -y nginx1"
+      "sudo amazon-linux-extras install -y nginx1",
+      "sudo systemctl enabled nginx",
+      "sudo systemctl start nginx"
     ]
   
   }
