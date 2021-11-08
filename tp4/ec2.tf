@@ -34,14 +34,10 @@ data "aws_ami" "amazon-linux-2" {
  }
 }
 
-resource "aws_key_pair" "devops-pg" {
-  key_name   = "devops-pg"
-}
-
  resource "aws_instance" "pg_t2" {
    ami           = "${data.aws_ami.amazon-linux-2.id}"
    instance_type = "t2.micro"
-   key_name = "aws_key_pair.devops-pg"
+   key_name = "devops-pg"
    security_groups = [ aws_security_group.pg_sg.name ]
 
    tags = var.tag_ec2
