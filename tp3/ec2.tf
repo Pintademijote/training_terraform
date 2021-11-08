@@ -38,6 +38,7 @@ data "aws_ami" "amazon-linux-2" {
    ami           = "${data.aws_ami.amazon-linux-2.id}"
    instance_type = "t2.micro"
    key_name = "devops-pg"
+   security_groups = [ aws_security_group.pg_sg ]
 
    tags = var.tag_ec2
 
@@ -73,8 +74,8 @@ data "aws_ami" "amazon-linux-2" {
 
 }
 
-resource "aws_network_interface_sg_attachment" "sg_attachment" {
-  security_group_id    = aws_security_group.pg_sg.id
-  network_interface_id = aws_instance.pg_t2.primary_network_interface_id
-}
+# resource "aws_network_interface_sg_attachment" "sg_attachment" {
+#   security_group_id    = aws_security_group.pg_sg.id
+#   network_interface_id = aws_instance.pg_t2.primary_network_interface_id
+# }
 
