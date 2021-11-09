@@ -1,3 +1,16 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-east-1"
+}
+
 module "ec2module" {
   source  = "../modules/ec2module"
 
@@ -7,5 +20,5 @@ module "ec2module" {
     Formation = "ajc"
    }
    sg_name="pg_sg_dev"
-   keyname_type="dev"
+   keyname_type="devops-pg"
 }

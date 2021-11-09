@@ -1,23 +1,9 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
-}
-
 locals {
   ports_in = [
     22,
     443,
     80
   ]
-}
-
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-east-1"
 }
 
 data "aws_ami" "amazon-linux-2" {
@@ -63,7 +49,7 @@ data "aws_ami" "amazon-linux-2" {
   connection {
     type="ssh"
     user="ec2-user"
-    private_key=file("/home/vagrant/devops-pg.pem")
+    private_key=file(var.path_key_ssh)
     host=self.public_ip
   }
 
