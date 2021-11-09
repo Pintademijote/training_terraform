@@ -38,7 +38,7 @@ data "aws_ami" "amazon-linux-2" {
  resource "aws_instance" "pg_t2" {
    ami           = "${data.aws_ami.amazon-linux-2.id}"
    instance_type = var.taille_ec2
-   key_name = "devops-pg"
+   key_name = var.keyname_type
    security_groups = [ aws_security_group.pg_sg.name ]
 
    tags = var.tag_ec2
