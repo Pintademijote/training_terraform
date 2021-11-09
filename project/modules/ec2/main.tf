@@ -1,7 +1,3 @@
-module "sg" {
-  source = "../sg"
-}
-
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["099720109477"]
@@ -16,7 +12,7 @@ resource "aws_instance" "pg_t2" {
   ami             = data.aws_ami.ubuntu.id
   instance_type   = var.taille_ec2
   key_name        = var.keyname_type
-  security_groups = [module.sg.sgname]
+  security_groups = [var.security_group_name]
 
   tags = var.tag_ec2
 

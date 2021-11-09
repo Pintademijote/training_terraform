@@ -5,3 +5,7 @@ variable "tag_ec2" {
     Formation = "ajc"
   }
 }
+
+variable "instance_id" {
+  default = module.ec2.instance_id
+}

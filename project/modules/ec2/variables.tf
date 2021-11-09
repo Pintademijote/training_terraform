@@ -27,3 +27,7 @@ variable "path_key_ssh" {
   type    = string
   default = "/home/vagrant/devops-pg.pem"
 }
+
+variable "security_group_name" {
+  default = module.sg.sgname
+}
