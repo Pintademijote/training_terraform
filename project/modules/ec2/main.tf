@@ -26,7 +26,8 @@ resource "aws_instance" "pg_t2" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo amazon-linux-extras install -y nginx1",
+      "sudo apt install -y nginx",
+      "sudo ufw allow 'Nginx HTTP'",
       "sudo systemctl enabled nginx",
       "sudo systemctl start nginx"
     ]
