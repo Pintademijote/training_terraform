@@ -8,5 +8,5 @@ resource "aws_ebs_volume" "pg_ebs" {
 resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.pg_ebs.id
-  instance_id = instance_id
+  instance_id = module.ec2.instance_id
 }

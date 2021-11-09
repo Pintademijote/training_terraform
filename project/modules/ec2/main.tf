@@ -12,7 +12,7 @@ resource "aws_instance" "pg_t2" {
   ami             = data.aws_ami.ubuntu.id
   instance_type   = var.taille_ec2
   key_name        = var.keyname_type
-  security_groups = [sgname]
+  security_groups = [module.sg.sgname]
 
   tags = var.tag_ec2
 

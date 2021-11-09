@@ -4,7 +4,7 @@ resource "aws_eip" "pg_eip" {
 }
 
 resource "aws_eip_association" "eip_pg" {
-  instance_id   = instance_id
+  instance_id   = module.ec2.instance_id
   allocation_id = aws_eip.pg_eip.id
 
 }
