@@ -1,5 +1,5 @@
 resource "aws_ebs_volume" "pg_ebs" {
-  availability_zone = "us-east-1"
+  availability_zone = "us-east-1a"
   size              = var.size_ebs
 
   tags = var.tag_ec2
