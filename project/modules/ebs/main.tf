@@ -1,5 +1,5 @@
 module "ec2" {
-  source = "./modules/ec2"
+  source = "../ec2"
 }
 
 resource "aws_ebs_volume" "pg_ebs" {

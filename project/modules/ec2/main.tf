@@ -1,5 +1,5 @@
 module "sg" {
-  source = "./modules/sg"
+  source = "../sg"
 }
 
 data "aws_ami" "ubuntu" {
