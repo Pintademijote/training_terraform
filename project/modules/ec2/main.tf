@@ -13,6 +13,7 @@ resource "aws_instance" "pg_t2" {
   instance_type   = var.taille_ec2
   key_name        = var.keyname_type
   security_groups = [var.security_group_name]
+  availability_zone = "us-east-1a"
 
   tags = var.tag_ec2
 
