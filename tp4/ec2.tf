@@ -106,7 +106,7 @@ data "aws_ami" "amazon-linux-2" {
 terraform {
   backend "s3" {
     bucket = "terraform-backend-pg"
-    key    = "/tfstate"
+    key    = "tfstate/"
     region = "us-east-1"
   }
 }
