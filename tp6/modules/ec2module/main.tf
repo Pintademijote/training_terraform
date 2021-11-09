@@ -81,7 +81,7 @@ data "aws_ami" "amazon-linux-2" {
  }
 
  resource "aws_security_group" "pg_sg" {
-  name        = "pg_sg"
+  name        = var.sg_name
   dynamic "ingress" {
     for_each = toset(local.ports_in)
     content {

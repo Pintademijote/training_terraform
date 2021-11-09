@@ -6,4 +6,5 @@ module "ec2module" {
     Name = "ec2-prod-pg"
     Formation = "ajc"
    }
+   sg_name="pg_sg_prod"
 }

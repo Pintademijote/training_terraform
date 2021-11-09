@@ -14,3 +14,7 @@ variable "tag_ec2" {
 variable "taille_ec2" {
   default = "t2.nano"
 }
+
+variable "sg_name" {
+  default = "pg_sg"
+}
