@@ -22,3 +22,8 @@ variable "sg_name" {
 variable "keyname_type" {
   default = "dev"
 }
+
+variable "path_key_ssh" {
+  type        = string
+  default     = "/home/vagrant/devops-pg.pem"
+}
