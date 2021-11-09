@@ -1,14 +1,14 @@
 variable "prenom" {
-  type        = string
-  default     = "pg"
+  type    = string
+  default = "pg"
 }
 
 variable "tag_ec2" {
-  type        = map
-  default     = {
-    Name = "ec2-pg"
+  type = map(any)
+  default = {
+    Name      = "ec2-pg"
     Formation = "ajc"
-   }
+  }
 }
 
 variable "taille_ec2" {
@@ -24,6 +24,6 @@ variable "keyname_type" {
 }
 
 variable "path_key_ssh" {
-  type        = string
-  default     = "/home/vagrant/devops-pg.pem"
+  type    = string
+  default = "/home/vagrant/devops-pg.pem"
 }
