@@ -29,5 +29,5 @@ variable "path_key_ssh" {
 }
 
 variable "security_group_name" {
-  default = module.sg.sgname
+  default = ""
 }

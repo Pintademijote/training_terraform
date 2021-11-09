@@ -7,5 +7,5 @@ variable "tag_ec2" {
 }
 
 variable "instance_id" {
-  default = module.ec2.instance_id
+  default = ""
 }
