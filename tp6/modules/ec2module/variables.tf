@@ -18,3 +18,7 @@ variable "taille_ec2" {
 variable "sg_name" {
   default = "pg_sg"
 }
+
+variable "keyname_type" {
+  default = "dev"
+}

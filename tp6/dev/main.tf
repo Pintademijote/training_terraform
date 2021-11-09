@@ -7,4 +7,5 @@ module "ec2module" {
     Formation = "ajc"
    }
    sg_name="pg_sg_dev"
+   keyname_type="dev"
 }
