@@ -103,14 +103,6 @@ data "aws_ami" "amazon-linux-2" {
 
 }
 
-terraform {
-  backend "s3" {
-    bucket = "terraform-backend-pg"
-    key    = "/tfstate"
-    region = "us-east-1"
-  }
-}
-
 # resource "aws_network_interface_sg_attachment" "sg_attachment" {
 #   security_group_id    = aws_security_group.pg_sg.id
 #   network_interface_id = aws_instance.pg_t2.primary_network_interface_id
