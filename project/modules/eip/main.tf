@@ -1,3 +1,7 @@
+module "ec2" {
+  source = "./modules/ec2"
+}
+
 resource "aws_eip" "pg_eip" {
   vpc  = true
   tags = var.tag_ec2

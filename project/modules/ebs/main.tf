@@ -1,3 +1,7 @@
+module "ec2" {
+  source = "./modules/ec2"
+}
+
 resource "aws_ebs_volume" "pg_ebs" {
   availability_zone = "us-east-1"
   size              = var.size_ebs
